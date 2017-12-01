@@ -1,0 +1,6 @@
+SELECT Service_type.sr_type_code, Service_type.sr_description, COUNT(*) AS count
+FROM facts
+JOIN Service_type ON facts.Service_type_key = Service_type.Service_type_key
+GROUP BY 1,2
+ORDER BY count DESC
+LIMIT 10;
